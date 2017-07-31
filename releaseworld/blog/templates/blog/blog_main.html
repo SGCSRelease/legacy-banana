@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ username }}'s Blog</title>
+    </head>
+    <body>
+        <h1>{{ username }}'s Blog</h1>
+        <a href="">new post</a>
+        <p>Posts</p>
+        <ul>
+            {% for post in post_list %}
+            <a href="">{{ post.title }}</a>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
