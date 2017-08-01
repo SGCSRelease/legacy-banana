@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}register{% endblock %}
+{% block content %}
+<h1>Registration</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <fieldset class="aligned">
+        <div class="form-row">
+            {{ form.username.label_tag }} {{ form.username }}
+        </div>
+        <div class="form-row">
+            {{ form.password1.label_tag }} {{ form.password1 }}
+        </div>
+        <div class="form-row">
+            {{ form.password2.label_tag }} {{ form.password2 }}
+        </div>
+    </fieldset>
+    <div class="submit-row">
+        <input type="submit" value="Register"/>
+    </div>
+    <script type="text/javascript">document.getElementById('id_username').focus();</script>
+</form>
+{% endblock %}
