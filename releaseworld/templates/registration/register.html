@@ -2,8 +2,11 @@
 {% block title %}register{% endblock %}
 {% block content %}
 <h1>Registration</h1>
-<form action="" method="post">
+<form action="." method="post">
     {% csrf_token %}
+    {% if form.errors %}
+    <p class="errornote">{{ form.errors }}</p>
+    {% endif %}
     <fieldset class="aligned">
         <div class="form-row">
             {{ form.username.label_tag }} {{ form.username }}

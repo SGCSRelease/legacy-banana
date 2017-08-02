@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% block title %}login{% endblock %}
 {% block content %}
-<form action="/accounts/logged_in" method="post">
+<form action="." method="post">
     {% csrf_token %}
+    {% if form.errors %}
+    <p class="errornote">Wrong! Please correct the error(s) below.</p>
+    {% endif %}
     <p>Please enter your id and password</p>
     <fieldset class="aligned">
         <div class="form-row">
