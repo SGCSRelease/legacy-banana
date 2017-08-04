@@ -6,8 +6,3 @@ class Post(models.Model):
     content = models.TextField()
     written_date = models.DateField()
 
-
-class User(models.Model):
-    username = models.CharField(max_length=100)
-    email = models.EmailField(unique=True)
-
