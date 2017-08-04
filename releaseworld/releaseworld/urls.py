@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from releaseworld.views import UserCreateView, UserCreateDoneTV
+from releaseworld.views import register, register_done
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # Authentication
     url(r'^accounts/', include('django.contrib.auth.urls')),
-    url(r'^accounts/register/$', UserCreateView.as_view(), name='register'),
-    url(r'^accounts/register/done/$', UserCreateDoneTV.as_view(), name='register_done'),
+    url(r'^accounts/register/$', register, name='register'),
+    url(r'^accounts/register/done/$', register_done, name='register_done'),
     # Blog
     url(r'^blog/', include('blog.urls', namespace='blog')),
 ]
