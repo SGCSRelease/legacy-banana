@@ -13,4 +13,3 @@ def login_check(request):
         username = str(request.user)
         return redirect('./blog_home', username=username)
     return redirect('../accounts/login/')
-
